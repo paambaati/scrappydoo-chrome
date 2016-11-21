@@ -1,0 +1,43 @@
+{
+  "name": "ScrappyDoo",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Moderately cool scrape-helper.",
+  "author":"GP",
+  "icons": {
+    "16": "icons/picker_16x16.png",
+    "48": "icons/picker_64x64.png",
+    "128": "icons/picker_128x128.png"
+  },
+  "homepage_url":"http://inversekarma.in",
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "storage",
+    "unlimitedStorage"
+  ],
+  "browser_action": {
+    "default_icon": "icons/picker_16x16.png"
+  },
+  "background": {
+    "scripts": ["js/background.js"],
+    "default_popup": "popup.html"
+  },
+  
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "js/jquery.min.js",
+        "js/jquery.dom-outline-1.0.js",
+        "js/contentscript.js"
+      ],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ]
+}

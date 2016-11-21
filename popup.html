@@ -1,0 +1,33 @@
+
+<!DOCTYPE HTML>
+<!-- ScrappyDoo -->
+<!-- (C) 2016 GP <gprasannah@gmail.com> -->
+<html lang="en">
+    <head>
+        <script src="js/vue.min.js"></script>
+    </head>
+    <body>
+        <div id="scrappy-doo">
+            <button type="button" @click="onStartPicking">PICK NEW ELEMENT</button>
+            <pre>{{productData}}</pre>
+            <ul>
+                <li v-for="(item, index) in productData" class="user" :key="productData['name']">
+                <span>{{productData.name}} - {{productData.selector}} - {{productData.attribute}}</span>
+                <button v-on:click="removeSelector(index)">X</button>
+                </li>
+            </ul>
+            <form id="form">
+                <input type="text" v-model="newData.selector" placeholder="CSS Selector">
+                <select v-model="newData.attribute" placeholder="HTML Attribute">
+                        <option value="src">src</option>
+                        <option value="href">href</option>
+                        <option value="tooltip">tooltip</option>
+                        <option value="value">value</option>
+                </select>
+                <input type="text" v-model="newData.name" placeholder="Name">
+                <input type="button" value="Add Data" v-on:click.prevent="addSelector">
+            </form>
+        </div>
+    </body>
+    <script src="js/popup.js"></script>
+</html>
