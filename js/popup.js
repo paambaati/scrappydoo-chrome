@@ -7,7 +7,7 @@ var emptyData = {
 var app = new Vue({
     el: '#scrappy-doo',
     data: {
-        productData: [emptyData],
+        productData: [],
         newData: emptyData
     },
     methods: {
@@ -48,6 +48,13 @@ var app = new Vue({
             vm.productData = result.productData;
           }
       });
+      // Set latest selector via runtime message.
+      /*chrome.runtime.onMessage.addListener(function (msg, sender, response) {
+        if ((msg.from === 'contentscript') && (msg.subject === 'SelectorInfo')) {
+            vm.newData.selector = result.latestSelector;
+        }
+      });*/
+      // Set latest selector via extension storage.
       chrome.storage.local.get('latestSelector', function(result) {
           if (result && result.latestSelector) {
             vm.newData.selector = result.latestSelector;
