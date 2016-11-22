@@ -20,6 +20,7 @@
     "default_icon": "icons/picker_16x16.png"
   },
   "background": {
+    "persistent": true,
     "scripts": ["js/background.js"],
     "default_popup": "popup.html"
   },
@@ -34,6 +35,7 @@
       "js": [
         "js/jquery.min.js",
         "js/jquery.dom-outline-1.0.js",
+        "js/jquery.unique.js",
         "js/contentscript.js"
       ],
       "run_at": "document_idle",
