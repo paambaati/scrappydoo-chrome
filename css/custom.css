@@ -1,0 +1,233 @@
+/**
+ScrappyDoo
+(C) 2016 GP <gprasannah@gmail.com>
+*/
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    background-color: #42d1af; 
+}
+body {
+    margin: 0;
+    width: 500px;
+    scrollbar-face-color: #555b5e;
+}
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+.m-t20 {
+    margin-top: 20px;
+}
+.p-L10 {
+    padding-left: 15px;
+}
+.p-R10 {
+    padding-right: 15px;
+}
+.brand {
+    float: left;
+}
+.brand > img, .brand > span {
+    display: inline-block;
+    vertical-align: middle;
+}
+.f-right {
+    float: right;
+}
+.panel-box {
+    background-color: #43484b;
+    padding: 15px 15px 130px;
+    min-height: 260px;
+    font: 14px/18px Arial, Tahoma, Verdana;
+    color: #e7e7e7;
+}
+.panel-box h1 {
+    margin: 0 0 15px;
+    padding-bottom: 10px;
+    font-size: 17px;
+    color: #6fd3ca;
+    border-bottom: 1px solid #555b5e;
+    overflow: hidden;
+}
+.btn {
+    background-color: #ccc;
+    padding: 8px 15px 6px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 18px;
+    text-align: center;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 0px 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+.btn:hover,
+.btn:focus {
+    box-shadow: 0 0px 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+.btn-primary,
+.btn-circle {
+    background-color: #42d1af;
+    cursor: pointer;
+}
+.btn-primary:hover,
+.btn-circle:hover {
+    background-color: #4ddcba;
+}
+.btn-primary:focus,
+.btn-circle:focus {
+    background-color: #3bc7a6;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+.btn-circle {
+    width: 38px;
+    height: 38px;
+    position: absolute;
+    top: -20px;
+    right: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+    line-height: 40px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+.pre-code {
+    background-color: #4f5759;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 12px;
+    border-radius: 4px;
+    max-height: 110px;
+    overflow-y: auto;
+    word-wrap: break-word;
+}
+.panel-form {
+    background-color: #4f5c64;
+    margin: 30px -15px -15px;
+    padding: 10px 20px 15px;
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+}
+.form-group {
+    width: 90%;
+    margin-bottom: 12px;
+}
+.form-group label {
+    display: block;
+    font-size: 11px;
+    color: #6fd3ca;
+    text-transform: uppercase;
+}
+.form-control {
+    background-color: transparent;
+    width: 100%;
+    padding: 6px 0 6px 5px;
+    color: #fff !important;
+    border: none;
+    border-bottom: 1px solid #7f878b;
+    outline: none;
+    transition: all 0.6s;
+}
+.form-control:focus {
+    border-color: #42d1af;
+}
+select.form-control {
+    height: 28px;
+}
+select.form-control option {
+    color: #000 !important;
+}
+.select-picker {
+    display: block;
+    position: relative;
+}
+.select-picker:before {
+    background-color: #4f5c64;
+    width: 24px;
+    height: 28px;
+    display: block;
+    content: '›';
+    position: absolute;
+    top: 0;
+    bottom: 1px;
+    right: 1px;
+    font-size: 28px;
+    font-weight: 100;
+    color: #89919e;
+    text-align: center;
+    transform: rotate(90deg);
+    z-index: 1;
+    pointer-events: none;
+}
+.select-picker > .form-control {
+    padding: 0 34px 0 0 !important;
+    color: #2C2A29;
+}
+.select-picker > .form-control:focus {
+    border-color: #07c5ac;
+}
+.col-50 {
+    width: 45%;
+    display: inline-block;
+}
+.list-select {
+    display: block;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+    max-height: 270px;
+}
+.list-select > li {
+    background-color: #acb5ba;
+    display: block;
+    margin: 0 0 10px;
+    padding: 8px 50px 8px 10px;
+    position: relative;
+    border: 1px solid #b4c7d1;
+    border-radius: 3px;
+    box-shadow: 0 0px 2px rgba(0, 0, 0, 0.4), 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+.list-select > li .action {
+    width: 15px;
+    position: absolute;
+    top: 24px;
+    right: 25px;
+    text-align: center;
+    cursor: pointer;
+}
+.list-select h3 {
+    margin: 0 0 6px;
+    font-size: 13px;
+    line-height: 18px;
+    color: #616b71;
+}
+.list-select p {
+    margin: 0 0 5px;
+    font-size: 12px;
+    line-height: 16px;
+    color: #000;
+}
+.list-select pre {
+    margin: 0;
+    font-size: 11px;
+    color: #1c6997;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
