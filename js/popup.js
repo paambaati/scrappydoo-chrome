@@ -1,8 +1,24 @@
+/**
+ * ScrappyDoo
+ *
+ * @description Popup JavaScript.
+ * @author GP
+ * @version 0.0.2
+ */
+
+/**
+ * Common variables.
+ */
+
 var emptyData = {
     'name': '',
     'selector': '',
     'attribute': ''
 };
+
+/**
+ * Vue app.
+ */
 
 var app = new Vue({
     el: '#scrappy-doo',
@@ -12,20 +28,21 @@ var app = new Vue({
     },
     methods: {
         addSelector: function () {
+            // Add selector.
             this.productData.push(Vue.util.extend({}, this.newData));
             chrome.storage.local.set({
-                'productData': this.productData
+                productData: this.productData
             });
-            //console.log(this.productData);
+            // Reset input fields after adding.
             this.newData.name = '';
             this.newData.selector = '';
             this.newData.attribute = '';
         },
         removeSelector: function(index) {
-            //console.log('remove item at index ', index);
+            // Remove selector.
             this.productData.splice(index, 1);
             chrome.storage.local.set({
-                'productData': this.productData
+                productData: this.productData
             });
         },
         onStartPicking: function() {
@@ -34,6 +51,7 @@ var app = new Vue({
             active: true,
             currentWindow: true
           }, function (tabs) {
+              // Ask content script to start the picker.
               chrome.tabs.sendMessage(tabs[0].id, {
                 from: 'popup',
                 subject: 'DOMInfo'
@@ -48,12 +66,6 @@ var app = new Vue({
             vm.productData = result.productData;
           }
       });
-      // Set latest selector via runtime message.
-      /*chrome.runtime.onMessage.addListener(function (msg, sender, response) {
-        if ((msg.from === 'contentscript') && (msg.subject === 'SelectorInfo')) {
-            vm.newData.selector = result.latestSelector;
-        }
-      });*/
       // Set latest selector via extension storage.
       chrome.storage.local.get('latestSelector', function(result) {
           if (result && result.latestSelector) {

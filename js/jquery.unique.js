@@ -1,4 +1,12 @@
 /**
+ * ScrappyDoo
+ *
+ * @description jQuery Plugin to get unique selector for given jQuery element.
+ * @author GP
+ * @version 0.0.2
+ */
+
+/**
  * Get unique selector for any given jQuery element.
  * Returns `id` attribute if element has one.
  */
