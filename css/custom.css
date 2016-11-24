@@ -26,12 +26,6 @@ body {
 .m-t20 {
     margin-top: 20px;
 }
-.p-L10 {
-    padding-left: 15px;
-}
-.p-R10 {
-    padding-right: 15px;
-}
 .brand {
     float: left;
 }
@@ -125,7 +119,6 @@ body {
     position: fixed;
 }
 .form-group {
-    width: 90%;
     margin-bottom: 12px;
 }
 .form-group label {
@@ -183,8 +176,14 @@ select.form-control option {
     border-color: #07c5ac;
 }
 .col-50 {
-    width: 45%;
+    width: 49%;
     display: inline-block;
+}
+.float-r {
+    float: right;
+}
+.float-l {
+    float: left;
 }
 .list-select {
     display: block;
